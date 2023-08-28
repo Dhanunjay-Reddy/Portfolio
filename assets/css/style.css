@@ -181,6 +181,19 @@ article {
   background: var(--jet);
   margin: 16px 0;
 }
+/* Created by dj */
+
+.separator {
+  width: 100%;
+  height: 2px; /* Increased height for a bolder line */
+  background: var(--jet);
+  margin: 16px 0;
+  border-radius: 4px; /* Add a subtle rounded effect */
+  opacity: 0.8; /* Slightly reduce opacity for a softer look */
+}
+
+/* Created by dj end */
+
 
 .icon-box {
   position: relative;
@@ -271,6 +284,104 @@ article.active {
 }
 
 .has-scrollbar::-webkit-scrollbar-button { width: 20px; }
+
+
+/* Changing Name related Styles */
+.my_name {
+  font-family: "Arial", sans-serif;
+  font-size: 25px;
+  color: #3498DB; /* Using a bright blue color */
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 20px 0;
+  
+  /* Responsive adjustments */
+  max-width: 100%;
+  padding: 10px;
+}
+
+/* Add a subtle hover effect to my name */
+.my_name:hover {
+  color: #E74C3C; /* Changing color on hover to a vibrant red */
+  background: linear-gradient(135deg, #3498DB 0%, #E74C3C 100%); /* Gradient background */
+  background-clip: text; /* Clip background to text */
+  -webkit-background-clip: text; /* For Safari */
+  text-fill-color: transparent; /* Hide the actual text color */
+  transform: scale(1.05); /* Slight scale-up on hover */
+  transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease; /* Add background transition */
+}
+
+
+/* Profile Pic Related Styles */
+/* Styling for the image container */
+.avatar-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 152px;
+  height: 197px;
+  border-radius: 20px;
+  border: 2px solid #3498DB;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styling for the image */
+.avatar-box img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for the container */
+.avatar-box:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.5); /* Adjust the scale for a more subtle effect */
+}
+
+
+/* Responsive adjustments for smaller screens mobiles */
+@media (max-width: 768px) {
+  .avatar-box {
+    width: 120px; /* Adjust the width for smaller screens */
+    height: 120px; /* Adjust the height for smaller screens */
+  }
+}
+
+/* Styling for the title (cybersecurity Enthusiast) */
+/* Styling for the title */
+.my-title {
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  color: #f4f441; /* Dark Gray color for the title */
+  text-align: center;
+  margin: 20px 0;
+  padding: 10px;
+  /* background-color: #F0F0F0;  */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Background color change and zoom effect on hover */
+.my-title:hover {
+  background-color: #3498DB; /* Blue color on hover */
+  color: #FFFFFF; /* White color for text on hover */
+  transform: scale(1.05); /* Zoom in effect on hover */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .my-title {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+}
+
+
+
+
+
 
 .content-card {
   position: relative;
@@ -409,6 +520,55 @@ main {
   align-items: center;
   gap: 16px;
 }
+/* Created by dj */
+
+.contacts-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  /* overflow: auto; Enable scrolling if content exceeds container height */
+}
+
+/* Styling for each contact item */
+.contact-item {
+  width: 210px; /* Fixed width for each contact item */
+  height: 80px; /* Fixed height for each contact item */
+  margin: 10px auto; /* Center the items and add some margin */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: grey; /* Light Gray background color */
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on the contact item */
+.contact-item:hover {
+  background-color: #3498DB; /* Blue color on hover */
+  color: #FFFFFF; /* White color for text on hover */
+  transform: scale(1.05); /* Zoom in effect on hover */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive adjustments for contact list */
+@media (max-width: 768px) {
+  .contacts-list {
+    grid-template-columns: 1fr; /* Maintain single column layout on smaller screens */
+  }
+
+  .contact-item {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 100%; /* Full width for smaller screens */
+    height: auto; /* Auto height for smaller screens */
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
+}
+
+/* Created by dj end */
+
+
 
 .contact-info {
   max-width: calc(100% - 46px);
@@ -422,12 +582,56 @@ main {
   margin-bottom: 2px;
 }
 
+/* Created by dj start */
+
 .contact-info :is(.contact-link, time, address) {
   color: var(--white-2);
   font-size: var(--fs-7);
+  position: relative; /* Add position relative for positioning pseudo-elements */
 }
 
-.contact-info address { font-style: normal; }
+/* Additional styling for the contact-link */
+.contact-info .contact-link {
+  text-decoration: underline;
+  transition: color 0.3s ease;
+  overflow: auto; /* Add scrolling to the contact-link if content exceeds */
+  max-height: 30px; /* Set a maximum height for the scrollable area */
+}
+
+/* Show additional information on hover */
+.contact-info .contact-link:hover::after {
+  content: attr(data-info); /* Display the data-info attribute content */
+  position: absolute;
+  bottom: -25px; /* Adjust the distance from the link */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--white-2);
+  color: var(--blue);
+  padding: 5px 8px;
+  font-size: var(--fs-6);
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Additional styling for the time */
+.contact-info time {
+  font-style: italic;
+}
+
+/* Additional styling for the address */
+.contact-info address {
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-info :is(.contact-link, time, address) {
+    font-size: var(--fs-6); /* Adjust font size for smaller screens */
+  }
+}
+
+/* Created by dj end */
+
 
 .social-list {
   display: flex;
@@ -447,6 +651,43 @@ main {
 .social-item .social-link:hover { color: #5A96E3; }
 
 
+/* Created by dj start */
+
+.social-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #5A96E3 #E1ECC8;
+}
+
+.social-item {
+  min-width: 60px;
+  max-width: 80px;
+  flex-shrink: 0;
+  transition: transform 0.2s, filter 0.2s;
+  cursor: pointer;
+}
+
+.social-link {
+  color: #E1ECC8;
+  font-size: 32px;
+  transition: color 0.2s;
+}
+
+.social-item:hover .social-link {
+  color: #5A96E3;
+}
+
+.social-item:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Created by dj end */
 
 
 
@@ -483,9 +724,32 @@ main {
 }
 
 .navbar-link:hover,
-.navbar-link:focus { color: var(--light-gray-70); }
+.navbar-link:focus { color: rgb(174, 174, 34); }
 
-.navbar-link.active { color: var(--orange-yellow-crayola); }
+.navbar-link.active { color: rgb(174, 174, 34); }
+
+
+/* start created by Dj */
+/* Additional style for navbar items */
+.navbar-item {
+  position: relative;
+  transition: transform 0.2s, filter 0.2s;
+  cursor: pointer;
+}
+
+.navbar-item:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.2);
+}
+
+/* Apply styles to the navbar items */
+.navbar-link {
+  color: var(--light-gray);
+  font-size: var(--fs-8);
+  padding: 15px 12px;
+  transition: color var(--transition-1);
+  text-decoration: none;
+}
 
 
 
@@ -539,6 +803,64 @@ main {
   border-radius: inherit;
   z-index: -1;
 }
+
+/* tart dj */
+/* Styles for the service item zoom effect - start */
+.service-item {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.2s;
+  opacity: 0.5;
+}
+
+.service-item:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-3);
+}
+
+.service-item:hover::before {
+  opacity: 1;
+}
+/* Styles for the service item zoom effect - end */
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  /* No changes to the service items' metrics in this query */
+}
+
+/* CSS function for h3-service-title */
+.h3-service-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #aac9f1;
+  /* background-color: grey; */
+  padding: 10px;
+  margin-bottom:10px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.h3-service-title:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 .service-icon-box { margin-bottom: 10px; }
 
@@ -1454,7 +1776,12 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .avatar-box { border-radius: 30px; }
 
-  .avatar-box img { width: 152px; }
+  /* .avatar-box img { width: 152px; } */
+
+ 
+
+
+
 
   .info-content .name { margin-bottom: 15px; }
 
@@ -1535,6 +1862,8 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 0;
     margin-top: 5px;
   }
+  
+
 
   .service-content-box { text-align: left; }
 
@@ -1690,6 +2019,73 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar, article { width: 700px; }
 
   .has-scrollbar::-webkit-scrollbar-button { width: 100px; }
+
+  
+  /* Styles for the scrollable container with text and emojis indicators - start */
+.has-scrollbar {
+  position: relative;
+  overflow: auto;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  width: 5px; /* for vertical scrollbar */
+  height: 5px; /* for horizontal scrollbar */
+}
+
+.has-scrollbar::-webkit-scrollbar-track {
+  background: var(--onyx);
+  border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola);
+  border-radius: 5px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 20px;
+}
+
+.has-scrollbar::-webkit-scrollbar-button {
+  width: 100px;
+}
+
+/* Text and emojis indicators for the scrollable container */
+.has-scrollbar-indicator {
+  position: absolute;
+  width: 200px;
+  height: 10px;
+  display: none;
+  font-size: 12px;
+  color: rgb(134, 214, 134);
+  transition: opacity 0.3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background: rgba(255, 255, 255, 0.7); */
+  border-radius: 4px;
+}
+
+.has-scrollbar-indicator.has-scrollbar-indicator-up {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.has-scrollbar-indicator.has-scrollbar-indicator-down {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
+
+.has-scrollbar:hover .has-scrollbar-indicator {
+  display: flex;
+  opacity: 1;
+}
+/* Styles for the scrollable container with text and emojis indicators - end */
+
 
 
 
@@ -1848,6 +2244,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .navbar-link { font-weight: var(--fw-500); }
+
+  
 
 
 
@@ -2035,3 +2433,14 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+/* CSS class for making elements zoom and responsive - start */
+.make-responsive {
+  transition: transform 0.2s;
+}
+
+@media (min-width: 768px) {
+  .make-responsive:hover {
+    transform: scale(1.03);
+  }
+}
+/* CSS class for making elements zoom and responsive - end */
